@@ -1,0 +1,23 @@
+{% extends 'sitelight/base.html' %}
+
+{% load markup %}
+
+{% block content %}
+
+	<section>
+
+		<article>
+
+			<header>
+
+				<h1>{{ entry.title }}</h1>
+
+			</header>
+
+			<section>{{ entry.content|markdown:"safe" }}</section>
+
+		</article>
+
+	</section>
+
+{% endblock content %}

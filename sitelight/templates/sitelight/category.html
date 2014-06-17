@@ -1,0 +1,29 @@
+{% extends 'sitelight/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+	<section>
+
+		<header>
+			<h1>{{ category.title }}</h1>
+		</header>
+
+		{% for e in category.published_entries %}
+
+			<article>
+
+				<a href="{{ e.get_url }}"><img src="{{ MEDIA_URL }}{{ e.image }}" alt=""></a>
+
+				<h2><a href="{{ e.get_url }}">{{ e.title }}</a></h2>
+
+				<p>{{ e.description }}</p>
+
+			</article>
+
+		{% endfor %}
+
+	</section>
+
+{% endblock content %}
